@@ -105,6 +105,7 @@ public class ShopController {
 
     @GetMapping("/cart/add/{id}")
     public String addProductToCart(Model model, @PathVariable("id") Long id, HttpServletRequest httpServletRequest) {
+        // Добвление товаров в корзину, учитывается сессия пользователя!!!
         shoppingCartService.addToCart(httpServletRequest.getSession(), id);
         String referrer = httpServletRequest.getHeader("referer");
 

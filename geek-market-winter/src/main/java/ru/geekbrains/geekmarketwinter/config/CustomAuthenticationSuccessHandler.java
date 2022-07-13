@@ -29,6 +29,8 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		User theUser = userService.findByUserName(userName);
 		HttpSession session = request.getSession();
 		session.setAttribute("user", theUser);
+
+		// Если аутентификация не прошла, то обновляем, иначе переводим на URL .../shop
 		if(!request.getHeader("referer").contains("login")) {
 			response.sendRedirect(request.getHeader("referer"));
 		} else {
