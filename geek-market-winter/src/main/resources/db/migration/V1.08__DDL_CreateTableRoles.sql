@@ -1,0 +1,13 @@
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS `roles`;
+
+CREATE TABLE `roles`
+(id      bigint       NOT NULL AUTO_INCREMENT,
+ name    VARCHAR(250) NOT NULL,
+ PRIMARY KEY (id),
+ UNIQUE KEY `UK_roles_name` (`name`),
+ CONSTRAINT `ch_roles_name` CHECK(name != '')
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+
+SET FOREIGN_KEY_CHECKS = 1;
