@@ -15,6 +15,7 @@
 
     <modules>
         <module>geek-market-winter</module>
+        <module>project-vma</module>
     </modules>
 
     <properties>
